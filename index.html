@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Shape Designer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel controls">
+        <h1>CSS Shape Designer</h1>
+        <p>Create complex CSS shapes with clip-path points, transforms, and gradients.</p>
+
+        <div class="field-group">
+          <label for="pointCount">Polygon points: <span id="pointCountValue">6</span></label>
+          <input type="range" id="pointCount" min="3" max="12" value="6" />
+        </div>
+
+        <div class="grid-2">
+          <div class="field-group">
+            <label for="shapeSize">Size</label>
+            <input type="range" id="shapeSize" min="120" max="320" value="220" />
+          </div>
+          <div class="field-group">
+            <label for="rotation">Rotation</label>
+            <input type="range" id="rotation" min="0" max="360" value="0" />
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field-group">
+            <label for="skew">Skew</label>
+            <input type="range" id="skew" min="-25" max="25" value="0" />
+          </div>
+          <div class="field-group">
+            <label for="shadow">Shadow depth</label>
+            <input type="range" id="shadow" min="0" max="50" value="20" />
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field-group">
+            <label for="colorA">Gradient Color A</label>
+            <input type="color" id="colorA" value="#5f6bff" />
+          </div>
+          <div class="field-group">
+            <label for="colorB">Gradient Color B</label>
+            <input type="color" id="colorB" value="#00d2ff" />
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="noise">Point randomness: <span id="noiseValue">18</span>%</label>
+          <input type="range" id="noise" min="0" max="35" value="18" />
+        </div>
+
+        <div class="actions">
+          <button id="randomizeBtn" type="button">Randomize Shape</button>
+          <button id="copyBtn" type="button">Copy CSS</button>
+        </div>
+      </section>
+
+      <section class="panel preview">
+        <div class="canvas" id="canvas">
+          <div id="shape" class="shape"></div>
+        </div>
+        <pre id="cssOutput"></pre>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
